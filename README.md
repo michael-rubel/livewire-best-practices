@@ -19,9 +19,11 @@ Avoid passing objects to component's `mount` method or properties if possible. U
 What is considered a large object?
 - Any instance as huge as *Eloquent Model* is already big enough for the Livewire component to slow down the component lifecycle. For example, if you have the component that represents the user profile (email and username), it's better to pass these parameters to properties as strings instead of assigning the whole model and then extracting attributes in the view.
 
-🔥 Exception here is the usage of Route Model Binding, i.e. you pass only an ID or UUID of the model to fetch, and then map the model attributes to the component's properties. Remember: don't assign a whole model, but its attributes only. To prevent manually mapping model attributes, you can use [Loop Functions](https://github.com/michael-rubel/laravel-loop-functions#assign-eloquent-model-attributes-to-class-properties) package.
-
 Note: if you use [full-page components](https://laravel-livewire.com/docs/2.x/rendering-components#page-components), it's recommended to fetch objects in the full-page component itself, and then pass them downstairs to the nested ones as primitive types.
+
+---
+### ✨ Use route model binding to fetch the model
+Pass only an ID or UUID to the `mount` method then map the model attributes to component properties. Remember: don't assign a whole model, but its attributes only. To prevent manually mapping model attributes, you can use [Loop Functions](https://github.com/michael-rubel/laravel-loop-functions#assign-eloquent-model-attributes-to-class-properties) package.
 
 ---
 ### 💡 Use *debounce*, *lazy* & *defer* wire:model's modifiers
