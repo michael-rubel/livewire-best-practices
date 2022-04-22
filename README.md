@@ -9,15 +9,15 @@ This repository is a curated list of general recommendations on how to use [Lara
 My name is [Michael Rubel](https://github.com/michael-rubel) and I started using the Livewire framework in 2019 when it was new and barely stable. Back in the day, I was impressed with how fast dynamic UIs can be shipped without even using JavaScript. But like any software solution, it had its pitfalls, and I had to deal with them. The main goal of this repository is to collect the most important experiences that you need to consider when working with Livewire.
 
 ## Table of contents
-- [Contents](#contents)
-    * [The Golden rule of performant Livewire](#--the-golden-rule-of-performant-livewire)
-    * [Use *debounce*, *lazy* & *defer* wire:model's modifiers](#---use--debounce----lazy-----defer--wire-model-s-modifiers)
-    * [Don't pass sensitive data to the components](#----don-t-pass-sensitive-data-to-the-components)
-    * [Use computed properties to access database](#---use-computed-properties-to-access-database)
-    * [Use artisan commands to create, move and rename components](#------use-artisan-commands-to-create--move-and-rename-components)
-    * [Keep component nesting level at 1](#---keep-component-nesting-level-at-1)
-    * [Use Form Request rules for validation](#---use-form-request-rules-for-validation)
-    * [Use event listeners instead of polling if possible](#--use-event-listeners-instead-of-polling-if-possible)
+- [Contents](#table-of-contents)
+  * [✨ The Golden rule of performant Livewire](#--the-golden-rule-of-performant-livewire)
+  * [💡 Use *debounce*, *lazy* & *defer* wire:model's modifiers](#---use--debounce----lazy-----defer--wire-model-s-modifiers)
+  * [🕵️ Don't pass sensitive data to the components](#----don-t-pass-sensitive-data-to-the-components)
+  * [📦 Use computed properties to access database](#---use-computed-properties-to-access-database)
+  * [👨‍💻 Use artisan commands to create, move and rename components](#------use-artisan-commands-to-create--move-and-rename-components)
+  * [🧵 Keep component nesting level at 1](#---keep-component-nesting-level-at-1)
+  * [🌎 Use Form Request rules for validation](#---use-form-request-rules-for-validation)
+  * [☔ Use event listeners instead of polling if possible](#--use-event-listeners-instead-of-polling-if-possible)
 - [Contributors](#contributors)
 
 ---
