@@ -21,6 +21,7 @@ My name is [Michael Rubel](https://github.com/michael-rubel) and I started using
     * [Use event listeners instead of polling if possible](#--use-event-listeners-instead-of-polling-if-possible)
 - [Contribution](#contribution)
 
+---
 ### ✨ The Golden rule of performant Livewire
 ```html
 Don't use big objects in Livewire components!
