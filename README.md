@@ -16,8 +16,8 @@ Don't pass large objects to Livewire components!
 
 Avoid passing objects to component's `mount` method or properties if possible. Use primitive types: strings, integers, arrays, etc. That's because Livewire serializes/deserializes your component's payload each request to the server to share the state between frontend & backend. If you need to work on objects, you can create them inside a method or computed property, and then return the result of processing as an array or paginated collection if needed.
 
-What is considered a large object?
-- Any instance as huge as *Eloquent Model* is already big enough for the Livewire component to slow down the component lifecycle. For example, if you have the component that represents the user profile (email and username), it's better to pass these parameters to properties as strings instead of assigning the whole model and then extracting attributes in the view.
+What to consider a large object?
+- Any instance large as Eloquent Model is big enough already for the Livewire to slow down the component lifecycle, which may lead to poor performance on live updates. For example, if you have a component that represents the user profile (email and username), it's better to pass these parameters to properties as strings instead of the assignment of the whole model and extraction of its attributes in the view.
 
 Note: if you use [full-page components](https://laravel-livewire.com/docs/2.x/rendering-components#page-components), it's recommended to fetch objects in the full-page component itself, and then pass them downstairs to the nested ones as primitive types.
 
