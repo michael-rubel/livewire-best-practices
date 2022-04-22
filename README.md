@@ -26,8 +26,8 @@ Note: if you use [full-page components](https://laravel-livewire.com/docs/2.x/re
 ---
 ### 💡 Use *debounce*, *lazy* & *defer* wire:model's modifiers
 To avoid unnecessary requests to the server, you can use wire:model's modifiers based on requirements for a particular input.
-- `debounce` - waits for a particular amount of time after the keystroke on the input before sending a server request.
-- `lazy` - the request will be sent only when the user clicks away from the field.
+- `debounce` - waits for a particular amount of time after the keystroke on the input field before sending a server request.
+- `lazy` - the request will be sent only when the user clicks away from the input field.
 - `defer` - saves the new value internally and passes it to the next request that may come from other input fields or other button clicks.
 
 ---
