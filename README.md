@@ -8,7 +8,6 @@ This repository is a curated list of general recommendations on how to use [Lara
 ### Short introduction
 My name is [Michael Rubel](https://github.com/michael-rubel) and I started using the Livewire framework in 2019 when it was new and barely stable. Back in the day, I was impressed with how fast dynamic UIs can be shipped without even using JavaScript. But like any software solution, it had its pitfalls, and I had to deal with them. The main goal of this repository is to collect the most important experiences that you need to consider when working with Livewire.
 
----
 ## Table of contents
 - [Contents](#contents)
     * [The Golden rule of performant Livewire](#--the-golden-rule-of-performant-livewire)
@@ -19,7 +18,7 @@ My name is [Michael Rubel](https://github.com/michael-rubel) and I started using
     * [Keep component nesting level at 1](#---keep-component-nesting-level-at-1)
     * [Use Form Request rules for validation](#---use-form-request-rules-for-validation)
     * [Use event listeners instead of polling if possible](#--use-event-listeners-instead-of-polling-if-possible)
-- [Contribution](#contribution)
+- [Contributors](#contributors)
 
 ---
 ### ✨ The Golden rule of performant Livewire
