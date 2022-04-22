@@ -11,12 +11,12 @@ My name is [Michael Rubel](https://github.com/michael-rubel) and I started using
 ---
 ### ✨ The Golden rule of performant Livewire
 ```html
-Don't use large objects in Livewire components!
+Don't pass large objects to Livewire components!
 ```
 
-Omit using objects at all if possible. Use only primitive types: strings, integers, arrays, etc. That's because Livewire serializes/deserializes your component's payload each request to the server to share the state between frontend & backend.
+Omit to pass objects to component's properties at all if possible. Use primitive types: strings, integers, arrays, etc. That's because Livewire serializes/deserializes your component's payload each request to the server to share the state between frontend & backend. If you need to work on objects, you can create them inside a particular method and then return the result of processing as an array or paginated collection if needed.
 
-What is considered a big object?
+What is considered a large object?
 - Any instance as huge as *Eloquent Model* is already big enough for the Livewire component to slow down the component lifecycle. For example, if you have the component that represents the user profile (email and username), it's better to pass these parameters to properties as strings instead of assigning the whole model and then extracting attributes in the view.
 
 🔥 Exception here is the usage of Route Model Binding, i.e. you pass only an ID or UUID of the model to fetch, and then map the model attributes to the component's properties. Remember: don't assign a whole model, but its attributes only. To prevent manually mapping model attributes, you can use [Loop Functions](https://github.com/michael-rubel/laravel-loop-functions#assign-eloquent-model-attributes-to-class-properties) package.
