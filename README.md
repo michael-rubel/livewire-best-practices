@@ -74,7 +74,7 @@ This way you can reuse the same validation rules in different application layers
 
 ---
 ### ☔ Use event listeners instead of polling if possible
-Instead of constantly polling the page to refresh your data, you may use [event listeners](https://laravel-livewire.com/docs/2.x/events#event-listeners) to perform the component update only on specific tasks performed from another component.
+Instead of constantly [polling](https://laravel-livewire.com/docs/2.x/polling#polling-background) the page to refresh your data, you may use [event listeners](https://laravel-livewire.com/docs/2.x/events#event-listeners) to perform the component update only on specific tasks performed from another component.
 
 ---
 ## Contributors
