@@ -11,7 +11,7 @@ My name is [Michael Rubel](https://github.com/michael-rubel) and I started using
 ---
 ### ✨ The Golden rule of performant Livewire
 ```html
-Don't use big objects in Livewire components!
+Don't use large objects in Livewire components!
 ```
 
 Omit using objects at all if possible. Use only primitive types: strings, integers, arrays, etc. That's because Livewire serializes/deserializes your component's payload each request to the server to share the state between frontend & backend.
