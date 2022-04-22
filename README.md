@@ -27,10 +27,7 @@ Pass only an ID or UUID to the `mount` method, then map the model attributes to 
 
 ---
 ### 💡 Use *debounce*, *lazy* & *defer* wire:model's modifiers
-To avoid unnecessary requests to the server, you can use wire:model's modifiers based on requirements for a particular input.
-- `debounce` - waits for a particular amount of time after the keystroke on the input field before sending a server request.
-- `lazy` - the request will be sent only when the user clicks away from the input field.
-- `defer` - saves the new value internally and passes it to the next request that may come from other input fields or other button clicks.
+You should use [wire:model's modifiers](https://laravel-livewire.com/docs/2.x/properties#debouncing-input) based on requirements for a particular input. This will dramatically reduce unnecessary requests to the server.
 
 ---
 ### 🕵️ Don't pass sensitive data to the components
