@@ -46,10 +46,14 @@ Instead of constantly [polling](https://laravel-livewire.com/docs/2.x/polling#po
 You can use [computed properties](https://laravel-livewire.com/docs/2.x/properties#computed-properties) to avoid unnecessary database queries. Computed properties are cached within the component's lifecycle and do not perform additional SQL queries on subsequent requests when updating the state of an already mounted component.
 
 ---
-### 👨‍💻 Use artisan commands to create, move and rename components
-Livewire has [built-in artisan commands](https://laravel-livewire.com/docs/2.x/reference#artisan-commands) to create, move, rename components, etc.
+### 👨‍💻 Use Artisan commands to create, move and rename components
+Livewire has [built-in Artisan commands](https://laravel-livewire.com/docs/2.x/reference#artisan-commands) to create, move, rename components, etc.
 For example, instead of manually renaming files, which could be error-prone, you can use the following command:
 - `php artisan livewire:move Old/Path/To/Component New/Path/To/Component`
+
+---
+### 💱 Always use loading states for better UX
+You can use [loading states](https://laravel-livewire.com/docs/2.x/loading-states) to make UX better. It will indicate to the user that something is happening in the background if your process is running longer than expected. To avoid flickering, you can use `delay` modifier.
 
 ---
 ### 🌎 Use Form Request rules for validation
