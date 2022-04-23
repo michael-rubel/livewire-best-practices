@@ -72,5 +72,10 @@ public function rules(): array
 This way you can reuse the same validation rules in different application layers, for example in API endpoints.
 
 ---
+### 🧪 Always write feature tests
+Even simple tests such as [this](https://laravel-livewire.com/docs/2.x/testing#testing-passed-data) can help you a lot when you change something in the components.
+Livewire has a very simple yet powerful [testing API](https://laravel-livewire.com/docs/2.x/testing#introduction).
+
+---
 ## Contributors
 [![GitHub Contributors Image](https://contrib.rocks/image?repo=michael-rubel/livewire-best-practices)](https://github.com/michael-rubel/livewire-best-practices/graphs/contributors)
