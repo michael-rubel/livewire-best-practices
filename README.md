@@ -9,6 +9,10 @@ This repository is a curated list of general recommendations on how to use [Lara
 My name is [Michael Rubel](https://github.com/michael-rubel) and I started using the Livewire framework in 2019 when it was new and barely stable. Back in the day, I was impressed with how fast dynamic UIs can be shipped without even using JavaScript. But like any software solution, it had its pitfalls, and I had to deal with them. The main goal of this repository is to collect the most important experiences that you need to consider when working with Livewire.
 
 ---
+### 🌳 Always set up root element
+Livewire requires a [root element](https://laravel-livewire.com/docs/2.x/troubleshooting#root-element-issues) to be present in each component. Simply put, you should always write code inside `<div>Your Code Here</div>`. Omitting this structure will lead to a lot of problems with updating components.
+
+---
 ### ✨ The Golden rule of performant Livewire
 ```html
 Don't pass large objects to Livewire components!
@@ -24,10 +28,6 @@ Note: if you use [full-page components](https://laravel-livewire.com/docs/2.x/re
 ---
 ### 🧵 Keep component nesting level at 1
 If you had a Livewire component (0) that includes another Livewire component (1), then you shouldn't nest it deeper (2+). Too much nesting can make a headache when dealing with DOM diffing issues.
-
----
-### 🌳 Always set up root element
-Livewire requires a [root element](https://laravel-livewire.com/docs/2.x/troubleshooting#root-element-issues) to be present in each component. Simply put, you should always write code inside `<div>Your Code Here</div>`. Omitting this structure will lead to a lot of problems with updating components.
 
 ---
 ### 🗺️ Use Route Model Binding to fetch the model
