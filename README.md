@@ -26,6 +26,10 @@ Note: if you use [full-page components](https://laravel-livewire.com/docs/2.x/re
 If you had a Livewire component (0) that includes another Livewire component (1), then you shouldn't nest it deeper (2+). Too much nesting can make a headache when dealing with DOM diffing issues.
 
 ---
+### 🌳 Always set up root element
+Livewire requires a [root element](https://laravel-livewire.com/docs/2.x/troubleshooting#root-element-issues) to be present in each component. Simply put, you should always write code inside `<div>Your Code Here</div>`. Omitting this structure will lead to a lot of problems with updating components.
+
+---
 ### 🗺️ Use Route Model Binding to fetch the model
 Pass only an ID or UUID to the `mount` method, then map the model attributes to component properties. Remember: don't assign a whole model, but its attributes only. To prevent manually mapping model attributes, you can use [Loop Functions](https://github.com/michael-rubel/laravel-loop-functions#assign-eloquent-model-attributes-to-class-properties) package.
 
