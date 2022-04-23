@@ -22,6 +22,10 @@ What to consider a large object?
 Note: if you use [full-page components](https://laravel-livewire.com/docs/2.x/rendering-components#page-components), it's recommended to fetch objects in the full-page component itself, and then pass them downstairs to the nested ones as primitive types.
 
 ---
+### 🧵 Keep component nesting level at 1
+If you had a Livewire component (0) that includes another Livewire component (1), then you shouldn't nest it deeper (2+). Too much nesting can make a headache when dealing with DOM diffing issues.
+
+---
 ### 🗺️ Use Route Model Binding to fetch the model
 Pass only an ID or UUID to the `mount` method, then map the model attributes to component properties. Remember: don't assign a whole model, but its attributes only. To prevent manually mapping model attributes, you can use [Loop Functions](https://github.com/michael-rubel/laravel-loop-functions#assign-eloquent-model-attributes-to-class-properties) package.
 
@@ -34,6 +38,10 @@ You should use [wire:model's modifiers](https://laravel-livewire.com/docs/2.x/pr
 Prevent situations that may lead to passing sensitive data to the Livewire components, because they can be easily accessed from the client side. Always hide sensitive attributes of your models using `$hidden` property or explicitly filter the data you are fetching.
 
 ---
+### ☔ Prefer to use event listeners over polling
+Instead of constantly [polling](https://laravel-livewire.com/docs/2.x/polling#polling-background) the page to refresh your data, you may use [event listeners](https://laravel-livewire.com/docs/2.x/events#event-listeners) to perform the component update only after specific task, initiated from another component.
+
+---
 ### 📦 Use computed properties to access database
 You can use [computed properties](https://laravel-livewire.com/docs/2.x/properties#computed-properties) to avoid unnecessary database queries. Computed properties are cached within the component's lifecycle and do not perform additional SQL queries on subsequent requests when updating the state of an already mounted component.
 
@@ -42,10 +50,6 @@ You can use [computed properties](https://laravel-livewire.com/docs/2.x/properti
 Livewire has [built-in artisan commands](https://laravel-livewire.com/docs/2.x/reference#artisan-commands) to create, move, rename components, etc.
 For example, instead of manually renaming files, which could be error-prone, you can use the following command:
 - `php artisan livewire:move Old/Path/To/Component New/Path/To/Component`
-
----
-### 🧵 Keep component nesting level at 1
-If you had a Livewire component (0) that includes another Livewire component (1), then you shouldn't nest it deeper (2+). Too much nesting can make a headache when dealing with DOM diffing issues.
 
 ---
 ### 🌎 Use Form Request rules for validation
@@ -58,10 +62,6 @@ public function rules(): array
 ```
 
 This way you can reuse the same validation rules in different application layers, for example in API endpoints.
-
----
-### ☔ Use event listeners instead of polling if possible
-Instead of constantly [polling](https://laravel-livewire.com/docs/2.x/polling#polling-background) the page to refresh your data, you may use [event listeners](https://laravel-livewire.com/docs/2.x/events#event-listeners) to perform the component update only after specific task, initiated from another component.
 
 ---
 ## Contributors
