@@ -75,7 +75,7 @@ This way you can reuse the same validation rules in different application layers
 
 ---
 ### 🧪 Always write feature tests
-Even simple tests such as [this](https://laravel-livewire.com/docs/2.x/testing#testing-passed-data) can help you a lot when you change something in the components.
+Even simple test such as [this one](https://laravel-livewire.com/docs/2.x/testing#testing-passed-data) can help you a lot when you change something in the components.
 Livewire has a very simple yet powerful [testing API](https://laravel-livewire.com/docs/2.x/testing#introduction). The [Missing Livewire Assertions](https://github.com/christophrumpel/missing-livewire-assertions) package may help you extend the set of available testing methods.
 
 ---
