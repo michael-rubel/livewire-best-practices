@@ -52,6 +52,10 @@ Instead of constantly [polling](https://laravel-livewire.com/docs/2.x/polling#po
 You can use [computed properties](https://laravel-livewire.com/docs/2.x/properties#computed-properties) to avoid unnecessary database queries. Computed properties are cached within the component's lifecycle and do not perform additional SQL queries on subsequent requests when updating the state of an already mounted component.
 
 ---
+### ➰ Keep track of a DOM elements
+If you face problems with updating content in your components, you must consider using [`wire:key`](https://laravel-livewire.com/docs/2.x/troubleshooting#dom-diffing-cures) construction to tell Livewire how to keep track of your DOM elements. This typically happens when you want to update something inside a loop or if you constantly poll the root component expecting updates in the nested ones.
+
+---
 ### 👨‍💻 Use Artisan commands to create, move and rename components
 Livewire has [built-in Artisan commands](https://laravel-livewire.com/docs/2.x/reference#artisan-commands) to create, move, rename components, etc.
 For example, instead of manually renaming files, which could be error-prone, you can use the following command:
