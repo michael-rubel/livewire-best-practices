@@ -33,7 +33,7 @@ If you had a Livewire component (0) that includes another Livewire component (1)
 
 ---
 ### 🗺️ Use Route Model Binding to fetch the model
-Pass only an ID or UUID to the `mount` method, then map the model attributes to component properties. Remember: don't assign a whole model, but its attributes only. To prevent manually mapping model attributes, you can use [Loop Functions](https://github.com/michael-rubel/laravel-loop-functions#assign-eloquent-model-attributes-to-class-properties) package.
+Pass only an ID or UUID to the `mount` method, then map the model attributes to component properties. Remember: don't assign a whole model, but its attributes only. To avoid manually mapping model attributes, you can use [Loop Functions](https://github.com/michael-rubel/laravel-loop-functions#assign-eloquent-model-attributes-to-class-properties) package.
 
 ---
 ### 💡 Use *debounce*, *lazy* & *defer* wire:model's modifiers
