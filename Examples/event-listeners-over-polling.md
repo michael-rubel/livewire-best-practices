@@ -1,13 +1,13 @@
 ### ☔ Prefer to use event listeners over polling
 
-- Bad:
+Bad:
 ```html
 <div wire:poll>
     User Content
 </div>
 ```
 
-- Good:
+Good:
 
 *In component to update:*
 ```php
@@ -16,7 +16,7 @@ protected $listeners = [
 ];
 ```
 
-*In component to send signal from:*
+*In component to send the signal from:*
 ```php
 $this->emit('userUpdated');
 ```
