@@ -14,6 +14,8 @@ Let's begin...
 ### 🌳 Always set up root element
 Livewire requires a [root element](https://laravel-livewire.com/docs/2.x/troubleshooting#root-element-issues) to be present in each component. Simply put, you should always write code inside `<div>Your Code Here</div>`. Omitting this structure will lead to a lot of problems with updating components.
 
+[Example](https://github.com/michael-rubel/livewire-best-practices/Examples/root-element.md)
+
 ---
 ### ✨ The Golden rule of performant Livewire
 ```html
@@ -35,9 +37,13 @@ If you had a Livewire component (0) that includes another Livewire component (1)
 ### 🗺️ Use Route Model Binding to fetch the model
 Pass only an ID or UUID to the `mount` method, then map the model attributes to component properties. Remember: don't assign a whole model, but its attributes only. To avoid manually mapping model attributes, you can use [Loop Functions](https://github.com/michael-rubel/laravel-loop-functions#assign-eloquent-model-attributes-to-class-properties) package.
 
+[Example](https://github.com/michael-rubel/livewire-best-practices/Examples/route-model-binding.md)
+
 ---
 ### 💡 Use *debounce*, *lazy* & *defer* wire:model's modifiers
 You should use [wire:model's modifiers](https://laravel-livewire.com/docs/2.x/properties#debouncing-input) based on requirements for a particular input. This will dramatically reduce unnecessary requests to the server.
+
+[Example](https://github.com/michael-rubel/livewire-best-practices/Examples/wire-model-modifiers.md)
 
 ---
 ### 🕵️ Don't pass sensitive data to the components
@@ -46,6 +52,8 @@ Prevent situations that may lead to passing sensitive data to the Livewire compo
 ---
 ### ☔ Prefer to use event listeners over polling
 Instead of constantly [polling](https://laravel-livewire.com/docs/2.x/polling#polling-background) the page to refresh your data, you may use [event listeners](https://laravel-livewire.com/docs/2.x/events#event-listeners) to perform the component update only after specific task, initiated from another component.
+
+[Example](https://github.com/michael-rubel/livewire-best-practices/Examples/event-listeners-over-polling.md)
 
 ---
 ### 📦 Use computed properties to access database
@@ -67,15 +75,10 @@ You can use [loading states](https://laravel-livewire.com/docs/2.x/loading-state
 
 ---
 ### 🌎 Use Form Request rules for validation
-Livewire doesn't support [Form Requests](https://laravel.com/docs/9.x/validation#form-request-validation) internally, but instead of hardcoding array of validation rules in the component, you may get it directly from Form Request:
-```php
-public function rules(): array
-{
-    return (new MyFormRequest)->rules();
-}
-```
-
+Livewire doesn't support [Form Requests](https://laravel.com/docs/9.x/validation#form-request-validation) internally, but instead of hardcoding array of validation rules in the component, you may get it directly from Form Request.
 This way you can reuse the same validation rules in different application layers, for example in API endpoints.
+
+[Example](https://github.com/michael-rubel/livewire-best-practices/Examples/form-request.md)
 
 ---
 ### 🧪 Always write feature tests
