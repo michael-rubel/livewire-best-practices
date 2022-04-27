@@ -33,6 +33,8 @@ Note: if you use [full-page components](https://laravel-livewire.com/docs/2.x/re
 ### 🧵 Keep component nesting level at 1
 If you had a Livewire component (0) that includes another Livewire component (1), then you shouldn't nest it deeper (2+). Too much nesting can make a headache when dealing with DOM diffing issues.
 
+[Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/nesting-level.md)
+
 ---
 ### 🗺️ Use Route Model Binding to fetch the model
 Pass only an ID or UUID to the `mount` method, then map the model attributes to component properties. Remember: don't assign a whole model, but its attributes only. To avoid manually mapping model attributes, you can use `fill` method, or [Loop Functions](https://github.com/michael-rubel/laravel-loop-functions#assign-eloquent-model-attributes-to-class-properties) package.
