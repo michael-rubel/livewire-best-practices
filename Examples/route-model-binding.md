@@ -5,8 +5,7 @@ Example `mount`:
 ```php
 public function mount(User $user): void
 {
-    $this->email    = $user->email;
-    $this->username = $user->username;
+    $this->fill($user);
 }
 ```
 
