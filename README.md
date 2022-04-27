@@ -59,6 +59,8 @@ Instead of constantly [polling](https://laravel-livewire.com/docs/2.x/polling#po
 ### 📦 Use computed properties to access database
 You can use [computed properties](https://laravel-livewire.com/docs/2.x/properties#computed-properties) to avoid unnecessary database queries. Computed properties are cached within the component's lifecycle and do not perform additional SQL queries on subsequent requests when updating the state of an already mounted component.
 
+[Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/computed-properties.md)
+
 ---
 ### ➰ Keep track of a DOM elements
 If you face problems with updating content in your components, you must consider using [`wire:key`](https://laravel-livewire.com/docs/2.x/troubleshooting#dom-diffing-cures) construction to tell Livewire how to keep track of your DOM elements. You will typically need this when you want to update something inside a loop or if you constantly poll the root component expecting updates in the nested ones.
