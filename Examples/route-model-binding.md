@@ -1,39 +1,21 @@
 ### 🗺️ Use Route Model Binding to fetch the model
 
-Example component:
+Example `mount`:
 
 ```php
-class Profile extends Component
+public function mount(User $user): void
 {
-    /**
-     * @var string
-     */
-    public string $email;
-
-    /**
-     * @var string|null
-     */
-    public ?string $username = null;
-
-    /**
-     * @param User $user
-     *
-     * @return void
-     */
-    public function mount(User $user): void
-    {
-        $this->email    = $user->email;
-        $this->username = $user->username;
-    }
+    $this->email    = $user->email;
+    $this->username = $user->username;
 }
 ```
 
 Bad:
 ```html
-<livewire:profile :user="$user" /> 
+<livewire:profile :user="auth()->user()" /> 
 ```
 
 Good:
 ```html
-<livewire:profile :user="$user->uuid" /> 
+<livewire:profile :user="auth()->user()->uuid" /> 
 ```
