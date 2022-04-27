@@ -79,6 +79,8 @@ For example, instead of manually renaming files, which could be error-prone, you
 ### 💱 Always use loading states for better UX
 You can use [loading states](https://laravel-livewire.com/docs/2.x/loading-states) to make UX better. It will indicate to the user that something is happening in the background if your process is running longer than expected. To avoid flickering, you can use `delay` modifier.
 
+[Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/loading-states.md)
+
 ---
 ### 🌎 Use Form Request rules for validation
 Livewire doesn't support [Form Requests](https://laravel.com/docs/9.x/validation#form-request-validation) internally, but instead of hardcoding array of validation rules in the component, you may get it directly from Form Request.
