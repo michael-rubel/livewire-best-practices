@@ -65,7 +65,9 @@ You can use [computed properties](https://laravel-livewire.com/docs/2.x/properti
 
 ---
 ### ➰ Keep track of a DOM elements
-If you face problems with updating content in your components, you must consider using [`wire:key`](https://laravel-livewire.com/docs/2.x/troubleshooting#dom-diffing-cures) construction to tell Livewire how to keep track of your DOM elements. You will typically need this when you want to update something inside a loop or if you constantly poll the root component expecting updates in the nested ones.
+If you face problems with updating content in your components, you must consider using [`wire:key`](https://laravel-livewire.com/docs/2.x/troubleshooting#dom-diffing-cures) construction to tell Livewire how to keep track of your DOM elements. You will typically need this when you want to update something inside a loop or if you constantly poll the root component expecting updates in the nested ones. Remember to avoid using identical `wire:key` for multiple components, this may lead to unpredictable bugs.
+
+[Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/wire-key.md)
 
 ---
 ### 👨‍💻 Use Artisan commands to create, move and rename components
