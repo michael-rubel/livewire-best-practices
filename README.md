@@ -96,7 +96,7 @@ Livewire has a very simple yet powerful [testing API](https://laravel-livewire.c
 ---
 > 🔨 Working with Livewire on a daily basis? PRs are welcomed!\
 > Suggest your own best practices if you don't see them on the list.\
-> If you aren't sure if it's a good practice, you can [start a discussion](https://github.com/michael-rubel/livewire-best-practices/discussions) first.
+> If you aren't sure if it's a good practice, you can [start a discussion](https://github.com/michael-rubel/livewire-best-practices/discussions/new) first.
 
 ## Contributors
 [![GitHub Contributors Image](https://contrib.rocks/image?repo=michael-rubel/livewire-best-practices)](https://github.com/michael-rubel/livewire-best-practices/graphs/contributors)
