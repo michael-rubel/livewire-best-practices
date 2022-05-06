@@ -16,6 +16,6 @@ Good:
 ```php
 public function rules(): array
 {
-    return app(MyFormRequest::class)->rules();
+    return (new MyFormRequest)->rules();
 }
 ```
