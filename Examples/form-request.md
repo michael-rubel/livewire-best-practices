@@ -12,7 +12,7 @@ public function rules(): array
 }
 ```
 
-Good:
+:heavy_check_mark: Good:
 ```php
 public function rules(): array
 {
