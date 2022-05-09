@@ -14,7 +14,7 @@ Bad:
 <livewire:profile :user="auth()->user()" /> 
 ```
 
-Good:
+:heavy_check_mark: Good:
 ```html
 <livewire:profile :user="auth()->user()->uuid" /> 
 ```
