@@ -1,6 +1,6 @@
 ### 🌳 Always set up root element
 
-Bad:
+:x: Bad:
 ```html
 <h1>Component Name</h1>
 <div class="content">Content</div>
