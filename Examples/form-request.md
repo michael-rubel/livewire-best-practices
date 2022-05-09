@@ -1,6 +1,6 @@
 ### 🌎 Use Form Request rules for validation
 
-Bad:
+:x: Bad:
 ```php
 public function rules(): array
 {
