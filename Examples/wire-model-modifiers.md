@@ -5,7 +5,7 @@ Bad:
 <input wire:model="email">
 ```
 
-Good:
+:heavy_check_mark: Good:
 ```html
 <input wire:model.debounce.500ms="email">
 ```
