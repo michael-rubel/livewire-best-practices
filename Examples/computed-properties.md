@@ -12,7 +12,7 @@ public function render(): View
 }
 ```
 
-Good:
+:heavy_check_mark: Good:
 ```php
 public function getCountriesProperty(): Collection
 {
