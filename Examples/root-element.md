@@ -6,7 +6,7 @@ Bad:
 <div class="content">Content</div>
 ```
 
-Good:
+:heavy_check_mark: Good:
 ```html
 <div>
     <h1>Component Name</h1>
