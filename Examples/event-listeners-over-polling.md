@@ -7,7 +7,7 @@ Bad:
 </div>
 ```
 
-Good:
+:heavy_check_mark: Good:
 
 *In component to update:*
 ```php
