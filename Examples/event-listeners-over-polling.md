@@ -1,13 +1,13 @@
 ### ☔ Prefer to use event listeners over polling
 
-Bad:
+:x: Bad:
 ```html
 <div wire:poll>
     User Content
 </div>
 ```
 
-Good:
+:heavy_check_mark: Good:
 
 *In component to update:*
 ```php

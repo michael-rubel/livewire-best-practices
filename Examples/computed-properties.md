@@ -1,6 +1,6 @@
 ### 📦 Use computed properties to access database
 
-Bad:
+:x: Bad:
 ```php
 public function render(): View
 {
@@ -12,7 +12,7 @@ public function render(): View
 }
 ```
 
-Good:
+:heavy_check_mark: Good:
 ```php
 public function getCountriesProperty(): Collection
 {

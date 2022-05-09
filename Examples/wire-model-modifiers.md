@@ -1,11 +1,11 @@
 ### 💡 Use *debounce*, *lazy* & *defer* wire:model's modifiers
 
-Bad:
+:x: Bad:
 ```html
 <input wire:model="email">
 ```
 
-Good:
+:heavy_check_mark: Good:
 ```html
 <input wire:model.debounce.500ms="email">
 ```

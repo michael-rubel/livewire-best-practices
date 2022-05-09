@@ -9,12 +9,12 @@ public function mount(User $user): void
 }
 ```
 
-Bad:
+:x: Bad:
 ```html
 <livewire:profile :user="auth()->user()" /> 
 ```
 
-Good:
+:heavy_check_mark: Good:
 ```html
 <livewire:profile :user="auth()->user()->uuid" /> 
 ```
