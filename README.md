@@ -82,6 +82,10 @@ You can use [loading states](https://laravel-livewire.com/docs/2.x/loading-state
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/loading-states.md)
 
 ---
+### 🔗 Entangle your live data
+wire:model is bound to the server-side request to update the state of the component, but you can optionally use [AlpineJS](https://alpinejs.dev/) to add client-side reactivity. Instead of using wire:models, you can use x-models from Alpine and then sync your data with the backend using [@entangle](https://laravel-livewire.com/docs/2.x/alpine-js#sharing-state) directive. This way your models will be updated instantly on the frontend, and the data on the server would persist after the network request reach the server. It dramatically improves the user experience on slow devices.
+
+---
 ### 🌎 Use Form Request rules for validation
 Livewire doesn't support [Form Requests](https://laravel.com/docs/9.x/validation#form-request-validation) internally, but instead of hardcoding array of validation rules in the component, you may get it directly from Form Request.
 This way you can reuse the same validation rules in different application layers, for example in API endpoints.
