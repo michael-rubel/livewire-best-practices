@@ -1,6 +1,6 @@
 ### 📦 Use computed properties to access database
 
-Bad:
+:x: Bad:
 ```php
 public function render(): View
 {
