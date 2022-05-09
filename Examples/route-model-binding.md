@@ -9,7 +9,7 @@ public function mount(User $user): void
 }
 ```
 
-Bad:
+:x: Bad:
 ```html
 <livewire:profile :user="auth()->user()" /> 
 ```
