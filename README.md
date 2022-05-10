@@ -49,7 +49,7 @@ You should use [wire:model's modifiers](https://laravel-livewire.com/docs/2.x/pr
 
 ---
 ### 🕵️ Don't pass sensitive data to the components
-Prevent situations that may lead to passing sensitive data to the Livewire components, because they can be easily accessed from the client side. Always hide sensitive attributes of your models using `$hidden` property or explicitly filter the data you are fetching.
+Prevent situations that may lead to passing sensitive data to the Livewire components, because they can be easily accessed from the client side by default. Always hide sensitive attributes of your models using `$hidden` property or explicitly filter the data you are fetching. Optionally, you can control access to public properties using [Livewire Access](https://github.com/archtechx/livewire-access) package.
 
 ---
 ### ☔ Prefer to use event listeners over polling
