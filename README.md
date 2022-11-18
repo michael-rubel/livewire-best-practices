@@ -22,10 +22,10 @@ Livewire requires a [root element](https://laravel-livewire.com/docs/2.x/trouble
 Don't pass large objects to Livewire components!
 ```
 
-Avoid passing objects to component's `mount` method or properties if possible. Use primitive types: strings, integers, arrays, etc. That's because Livewire serializes/deserializes your component's payload each request to the server to share the state between frontend & backend. If you need to work on objects, you can create them inside a method or computed property, and then return the result of processing as an array or paginated collection if needed.
+Avoid passing objects to the component's `mount` method or properties if possible. Use primitive types: strings, integers, arrays, etc. That's because Livewire serializes/deserializes your component's payload with each request to the server to share the state between the frontend & backend. If you need to work on objects, you can create them inside a method or computed property, and then return the result of processing as an array or paginated collection if needed.
 
 What to consider a large object?
-- Any instance large as Eloquent Model is big enough already for the Livewire to slow down the component lifecycle, which may lead to poor performance on live updates. For example, if you have a component that represents the user profile (email and username), it's better to pass these parameters to properties as strings instead of the assignment of the whole model and extraction of its attributes in the view.
+- Any instance large as Eloquent Model is big enough already for Livewire to slow down the component lifecycle, which may lead to poor performance on live updates. For example, if you have a component that represents the user profile (email and username), it's better to pass these parameters to properties as strings instead of the assignment of the whole model and extracting its attributes in the view.
 
 Note: if you use [full-page components](https://laravel-livewire.com/docs/2.x/rendering-components#page-components), it's recommended to fetch objects in the full-page component itself, and then pass them downstairs to the nested ones as primitive types.
 
@@ -43,17 +43,18 @@ Pass only an ID or UUID to the `mount` method, then map the model attributes to 
 
 ---
 ### 💡 Use *debounce*, *lazy* & *defer* wire:model's modifiers
-You should use [wire:model's modifiers](https://laravel-livewire.com/docs/2.x/properties#debouncing-input) based on requirements for a particular input. This will dramatically reduce unnecessary requests to the server.
+You should use [wire:model's modifiers](https://laravel-livewire.com/docs/2.x/properties#debouncing-input) based on requirements for a particular input.\
+This will dramatically reduce unnecessary requests to the server.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/wire-model-modifiers.md)
 
 ---
 ### 🕵️ Don't pass sensitive data to the components
-Prevent situations that may lead to passing sensitive data to the Livewire components, because they can be easily accessed from the client side by default. Always hide sensitive attributes of your models using `$hidden` property or explicitly filter the data you are fetching. You can as well make your properties `protected` in Livewire component and then access it using `$this`, which will make them unavailable for the browser but accessible in Blade templates.
+Avoid situations that may lead to passing sensitive data to the Livewire components, because they can be easily accessed from the client side by default. Always hide sensitive attributes of your models using `$hidden` property or explicitly filter the data you are fetching. You can as well make your properties `protected` in the Livewire component and then access it using `$this`, which will make them unavailable for the browser but accessible in Blade templates.
 
 ---
 ### ☔ Prefer to use event listeners over polling
-Instead of constantly [polling](https://laravel-livewire.com/docs/2.x/polling#polling-background) the page to refresh your data, you may use [event listeners](https://laravel-livewire.com/docs/2.x/events#event-listeners) to perform the component update only after specific task, initiated from another component.
+Instead of constantly [polling](https://laravel-livewire.com/docs/2.x/polling#polling-background) the page to refresh your data, you may use [event listeners](https://laravel-livewire.com/docs/2.x/events#event-listeners) to perform the component update only after a specific task was initiated from another component.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/event-listeners-over-polling.md)
 
@@ -77,7 +78,7 @@ For example, instead of manually renaming files, which could be error-prone, you
 
 ---
 ### 💱 Always use loading states for better UX
-You can use [loading states](https://laravel-livewire.com/docs/2.x/loading-states) to make UX better. It will indicate to the user that something is happening in the background if your process is running longer than expected. To avoid flickering, you can use `delay` modifier.
+You can use [loading states](https://laravel-livewire.com/docs/2.x/loading-states) to make UX better. It will indicate to the user that something is happening in the background if your process is running longer than expected. To avoid flickering, you can use the `delay` modifier.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/loading-states.md)
 
@@ -89,20 +90,20 @@ You can use [loading states](https://laravel-livewire.com/docs/2.x/loading-state
 
 ---
 ### 🌎 Use Form Request rules for validation
-Livewire doesn't support [Form Requests](https://laravel.com/docs/9.x/validation#form-request-validation) internally, but instead of hardcoding array of validation rules in the component, you may get it directly from Form Request.
+Livewire doesn't support [Form Requests](https://laravel.com/docs/9.x/validation#form-request-validation) internally, but instead of hardcoding the array of validation rules in the component, you may get it directly from Form Request.
 This way you can reuse the same validation rules in different application layers, for example in API endpoints.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/form-request.md)
 
 ---
 ### 🧪 Always write feature tests
-Even simple test such as [this one](https://laravel-livewire.com/docs/2.x/testing#testing-passed-data) can help you a lot when you change something in the component.
+Even simple tests such as [this one](https://laravel-livewire.com/docs/2.x/testing#testing-passed-data) can help you a lot when you change something in the component.
 Livewire has a very simple yet powerful [testing API](https://laravel-livewire.com/docs/2.x/testing#introduction). The [Missing Livewire Assertions](https://github.com/christophrumpel/missing-livewire-assertions) package may help you extend the set of available testing methods.
 
 ---
-> 🔨 Working with Livewire on a daily basis? PRs are welcomed!\
-> Suggest your own best practices if you don't see them on the list.\
-> If you aren't sure if it's a good practice, you can [start a discussion](https://github.com/michael-rubel/livewire-best-practices/discussions/new) first.
+> 🔨 Are you working with Livewire on a daily basis? PRs are welcome.\
+> Suggest your best practices if you don't see them on the list.\
+> If you aren't sure if it's a good practice, you can [start a discussion](https://github.com/michael-rubel/livewire-best-practices/discussions/new).
 
 ## Contributors
 [![GitHub Contributors Image](https://contrib.rocks/image?repo=michael-rubel/livewire-best-practices)](https://github.com/michael-rubel/livewire-best-practices/graphs/contributors)
