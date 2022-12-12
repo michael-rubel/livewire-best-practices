@@ -33,6 +33,8 @@ Note: if you use [full-page components](https://laravel-livewire.com/docs/2.x/re
 ### 🧵 Keep component nesting level at 1
 If you had a Livewire component (0) that includes another Livewire component (1), then you shouldn't nest it deeper (2+). Too much nesting can make a headache when dealing with DOM diffing issues.
 
+Also, prefer the usage of Blade components when you use nesting, they will be able to communicate with the parent's Livewire component but won't have the overhead the Livewire adds.
+
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/nesting-level.md)
 
 ---
