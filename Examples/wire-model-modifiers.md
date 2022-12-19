@@ -1,4 +1,4 @@
-### 💡 Use *debounce*, *lazy* & *defer* wire:model's modifiers
+### 💡 Use *lazy*, *defer* & *debounce* wire:model's modifiers
 
 :x: Bad:
 ```html
@@ -7,5 +7,5 @@
 
 :heavy_check_mark: Good:
 ```html
-<input wire:model.debounce.500ms="email">
+<input wire:model.lazy="email">
 ```
