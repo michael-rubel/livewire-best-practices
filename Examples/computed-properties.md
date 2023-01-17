@@ -2,13 +2,11 @@
 
 :x: Bad:
 ```php
-public function render(): View
+public function countries(): Collection
 {
-    $countries = Country::select('name', 'code')
+    return Country::select('name', 'code')
         ->orderBy('name')
         ->get();
-
-    return view('livewire.select-country', ['countries' => $countries]);
 }
 ```
 
