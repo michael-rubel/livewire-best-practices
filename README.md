@@ -62,7 +62,7 @@ Instead of constantly [polling](https://laravel-livewire.com/docs/2.x/polling#po
 
 ---
 ### 📦 Use computed properties to access database
-You can use [computed properties](https://laravel-livewire.com/docs/2.x/properties#computed-properties) to avoid unnecessary database queries. Computed properties are cached within the component's lifecycle and do not perform additional SQL queries on individual request when using the resources in class or in blade view. This shouldn't be expected to avoid queries for subsequent requests.
+You can use [computed properties](https://laravel-livewire.com/docs/2.x/properties#computed-properties) to avoid unnecessary database queries. Computed properties are cached within the component's lifecycle and do not perform additional SQL queries on multiple calls in the component class or in the blade view.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/computed-properties.md)
 
