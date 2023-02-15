@@ -85,6 +85,10 @@ You can use [loading states](https://laravel-livewire.com/docs/2.x/loading-state
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/loading-states.md)
 
 ---
+### 📈 Defer loading where possible
+Instead of blocking the page render until your data is fully ready, you can create a preloader using the [Defer Loading](https://laravel-livewire.com/docs/2.x/defer-loading) feature so your UI will feel more responsive when there's a lot of data to load in the components.
+
+---
 ### 🔗 Entangle your live data
 `wire:model` is bound to the server-side request to update the state of the component, but you can optionally use [AlpineJS](https://alpinejs.dev/) to add client-side reactivity. Instead of using `wire:model`, you can use `x-model` from AlpineJS and sync your data with the backend using [@entangle](https://laravel-livewire.com/docs/2.x/alpine-js#sharing-state) directive. This way the model will update instantly on the frontend, and the data would persist server-side after the network request reach the server. It dramatically improves the user experience on slow devices.
 
