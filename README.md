@@ -61,6 +61,21 @@ Instead of constantly [polling](https://laravel-livewire.com/docs/2.x/polling#po
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/event-listeners-over-polling.md)
 
 ---
+### 🛡️ Stop Livewire errors from affecting your user's experience
+When an error from the Livewire component arrives, you see an error page above your current page.
+It helps during development but can be very annoying in production. You can put a simple JS script to avoid this:
+
+```blade
+@production
+  <script>
+      Livewire.onError(function (message, response) {
+          return false;
+      });
+  </script>
+@endproduction
+```
+
+---
 ### 📦 Use computed properties to access database
 You can use [computed properties](https://laravel-livewire.com/docs/2.x/properties#computed-properties) to avoid unnecessary database queries. Computed properties are cached within the component's lifecycle and do not perform additional SQL queries on multiple calls in the component class or in the blade view.
 
