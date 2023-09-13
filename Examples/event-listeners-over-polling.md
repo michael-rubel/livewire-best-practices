@@ -9,14 +9,19 @@
 
 :heavy_check_mark: Good:
 
-*In component to update:*
+*Define the listener in the component using `On` attribute:*
 ```php
-protected $listeners = [
-    'userUpdated' => '$refresh',
-];
+class Dashboard extends Component
+{
+    #[On('post-created')] 
+    public function updatePostList($title)
+    {
+        // ...
+    }
+}
 ```
 
-*In component to send the signal from:*
+*Dispatch the event in every other component:*
 ```php
-$this->emit('userUpdated');
+$this->dispatch('post-created'); 
 ```
