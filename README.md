@@ -12,7 +12,7 @@ Let's begin...
 
 ---
 ### 🌳 Always set up root element
-Livewire requires a [root element](https://laravel-livewire.com/docs/2.x/troubleshooting#root-element-issues) to be present in each component. Simply put, you should always write code inside `<div>Your Code Here</div>`. Omitting this structure will lead to a lot of problems with updating components.
+Livewire requires a root element (div) to be present in each component. Simply put, you should always write code inside `<div>Your Code Here</div>`. Omitting this structure will lead to a lot of problems with updating components.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/root-element.md)
 
@@ -25,9 +25,9 @@ Don't pass large objects to Livewire components!
 Avoid passing objects to the component's public properties if possible. Use primitive types: strings, integers, arrays, etc. That's because Livewire serializes/deserializes your component's payload with each request to the server to share the state between the frontend & backend. If you need to work on objects, you can create them inside a method or computed property, and then return the result of the processing.
 
 What to consider a large object?
-- Any instance large as Eloquent Model is big enough already for Livewire to slow down the component lifecycle, which may lead to poor performance on live updates. For example, if you have a component that represents the user profile (email and username), it's better to pass these parameters to properties as strings instead of the assignment of the whole model. Alternatively, you can retrieve the model and then keep it as a `protected` property. You'll still be able to access the protected objects in Blade templates by using `$this->yourProperty`, but remember that protected properties should be re-hydrated manually on subsequent requests.
+- Any instance large as Eloquent Model is big enough already for Livewire to slow down the component lifecycle, which may lead to poor performance on live updates. For example, if you have a component that represents the user profile (email and username), it's better to pass these parameters to properties as strings instead of the assignment of the whole model.
 
-Note: if you use [full-page components](https://laravel-livewire.com/docs/2.x/rendering-components#page-components), it's recommended to fetch objects in the full-page component itself, and then pass them downstairs to the nested ones as primitive types.
+Note: if you use [full-page components](https://livewire.laravel.com/docs/components#full-page-components), it's recommended to fetch objects in the full-page component itself, and then pass them downstairs to the nested ones as primitive types.
 
 ---
 ### 🧵 Keep component nesting level at 1
@@ -68,7 +68,7 @@ You can use [computed properties](https://livewire.laravel.com/docs/computed-pro
 
 ---
 ### ➰ Keep track of a DOM elements
-If you face problems with updating content in your components, you must consider using [`wire:key`](https://laravel-livewire.com/docs/2.x/troubleshooting#dom-diffing-cures) construction to tell Livewire how to keep track of your DOM elements. You will typically need this when you want to update something inside a loop or if you constantly poll the root component expecting updates in the nested ones. Remember to avoid using identical `wire:key` for multiple components, this may lead to unpredictable bugs.
+If you face problems with updating content in your components, you must consider using [`wire:key`](https://livewire.laravel.com/docs/components#adding-wirekey-to-foreach-loops) construction to tell Livewire how to keep track of your DOM elements. You will typically need this when you want to update something inside a loop or if you constantly poll the root component expecting updates in the nested ones. Remember to avoid using identical `wire:key` for multiple components, this may lead to unpredictable bugs.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/wire-key.md)
 
@@ -86,7 +86,7 @@ You can use [loading states](https://livewire.laravel.com/docs/loading#basic-usa
 
 ---
 ### 📈 Use lazy loading
-Instead of blocking the page render until your data is ready, you can create a placeholder using the [Lazy Loading](https://laravel-livewire.com/docs/2.x/defer-loading) technique so your UI will feel more responsive.
+Instead of blocking the page render until your data is ready, you can create a placeholder using the [lazy loading](https://livewire.laravel.com/docs/lazy) technique so your UI will feel more responsive.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/lazy-loading.md)
 
@@ -105,8 +105,8 @@ This way you can reuse the same validation rules in different application layers
 
 ---
 ### 🧪 Always write feature tests
-Even simple tests such as [this one](https://laravel-livewire.com/docs/2.x/testing#testing-passed-data) can help you a lot when you change something in the component.
-Livewire has a very simple yet powerful [testing API](https://laravel-livewire.com/docs/2.x/testing#introduction). The [Missing Livewire Assertions](https://github.com/christophrumpel/missing-livewire-assertions) package may help you extend the set of available testing methods.
+Even simple tests can help you a lot when you change something in the component.
+Livewire has a very simple yet powerful [testing API](https://livewire.laravel.com/docs/testing).
 
 ---
 > 🔨 Are you working with Livewire on a daily basis? PRs are welcome.\
