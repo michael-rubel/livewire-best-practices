@@ -12,7 +12,8 @@ public function countries(): Collection
 
 :heavy_check_mark: Good:
 ```php
-public function getCountriesProperty(): Collection
+#[Computed]
+public function countries(): Collection
 {
     return Country::select('name', 'code')
         ->orderBy('name')
