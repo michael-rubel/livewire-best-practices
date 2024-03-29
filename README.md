@@ -38,17 +38,10 @@ Also, prefer the usage of Blade components when you use nesting, they will be ab
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/nesting-level.md)
 
 ---
-### 🗺️ Use Route Model Binding to fetch the model
-Pass only an ID or UUID to the `mount` method, then map the model attributes to component properties. Remember: don't assign a whole model, but its attributes only. To avoid manually mapping model attributes, you can use the `fill` method.
+### 📝 Utilize the form objects
+Livewire v3 introduced a new abstraction layer called `Form Objects`. Always use them because that makes your components more maintainable in the long run.
 
-[Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/route-model-binding.md)
-
----
-### 💡 Avoid using *live* wire:model modifier where possible
-Avoid using `live` wire:model modifier. This dramatically reduces unnecessary requests to the server.
-In Livewire version 3, all the models are deferred by default (old: `defer` modifier), which is good.
-
-[Examples](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/wire-model-modifiers.md)
+[Docs](https://livewire.laravel.com/docs/forms)
 
 ---
 ### 🕵️ Don't pass sensitive data to the components
@@ -62,12 +55,25 @@ Instead of constantly [polling](https://livewire.laravel.com/docs/polling) the p
 
 ---
 ### 📦 Use computed properties to access the database
-You can use [computed properties](https://livewire.laravel.com/docs/computed-properties) to avoid unnecessary database queries. Computed properties are cached within the component's lifecycle and do not perform additional SQL queries on multiple calls in the component class or in the blade view.
+You can use [computed properties](https://livewire.laravel.com/docs/computed-properties) to avoid unnecessary database queries. Computed properties are cached within the component's lifecycle and do not run multiple times in the component class or the blade view. Starting from Livewire v3, the result of computed properties can also be cached in the generic application-level cache (for example Redis), [see](https://livewire.laravel.com/docs/computed-properties#caching-between-requests).
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/computed-properties.md)
 
 ---
-### 👨‍💻 Use Artisan commands to create, move and rename components
+### 🗺️ Use Route Model Binding to fetch the model
+Pass only an ID or UUID to the `mount` method, then map the model attributes to component properties. Remember: don't assign a whole model, but its attributes only. To avoid manually mapping model attributes, you can use the `fill` method.
+
+[Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/route-model-binding.md)
+
+---
+### 💡 Avoid using *live* wire:model modifier where possible
+Avoid using `live` wire:model modifier. This dramatically reduces unnecessary requests to the server.
+In Livewire version 3, all the models are deferred by default (old: `defer` modifier), which is good.
+
+[Examples](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/wire-model-modifiers.md)
+
+---
+### 👨‍💻 Use Artisan commands to create, move, and rename components
 Livewire has [built-in Artisan commands](https://livewire.laravel.com/docs/quickstart#create-a-livewire-component) to create, move, rename components, etc.
 For example, instead of manually renaming files, which could be error-prone, you can use the following command:
 - `php artisan livewire:move Old/Path/To/Component New/Path/To/Component`
