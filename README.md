@@ -5,14 +5,14 @@
 
 This repository is a curated list of general recommendations on how to use [Laravel Livewire framework](https://github.com/livewire/livewire) to meet enterprise concerns regarding security, performance, and maintenance of Livewire components.
 
-### Short introduction
-My name is [Michael Rubél](https://github.com/michael-rubel) and I started using the Livewire framework in 2019 when it was new and barely stable. Back in the day, I was impressed with how fast dynamic UIs can be shipped without even using JavaScript. But like any software solution, it had its pitfalls, and I had to deal with them. The main goal of this repository is to collect the most important experiences that you need to consider when working with Livewire.
+### Short Introduction
+My name is [Michael Rubél](https://github.com/michael-rubel) and I started using the Livewire framework in 2019 when it was new and barely stable. Back in the day, I was impressed with how fast dynamic UIs can be shipped without even using JavaScript. But like any software solution, it had its pitfalls, and I had to deal with them. The main goal of this repository is to collect the most important experiences you need to consider when working with Livewire.
 
 Let's begin...
 
 ---
-### 🌳 Always set up root element
-Livewire requires a root element (div) to be present in each component. Simply put, you should always write code inside `<div>Your Code Here</div>`. Omitting this structure will lead to a lot of problems with updating components.
+### 🌳 Always set up the root element
+Livewire requires a root element (div) in each component. You should always write code inside `<div>Your Code Here</div>`. Omitting this structure will lead to a lot of problems with updating components.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/root-element.md)
 
@@ -25,7 +25,7 @@ Don't pass large objects to Livewire components!
 Avoid passing objects to the component's public properties if possible. Use primitive types: strings, integers, arrays, etc. That's because Livewire serializes/deserializes your component's payload with each request to the server to share the state between the frontend & backend. If you need to work on objects, you can create them inside a method or computed property, and then return the result of the processing.
 
 What to consider a large object?
-- Any instance large as Eloquent Model is big enough already for Livewire to slow down the component lifecycle, which may lead to poor performance on live updates. For example, if you have a component that represents the user profile (email and username), it's better to pass these parameters to properties as strings instead of the assignment of the whole model.
+- Any instance as large as the Eloquent model is big enough already for Livewire to slow down the component lifecycle, which may lead to poor performance on live updates. For example, if you have a component representing the user profile (email and username), pass these parameters to properties as strings.
 
 Note: if you use [full-page components](https://livewire.laravel.com/docs/components#full-page-components), it's recommended to fetch objects in the full-page component itself, and then pass them downstairs to the nested ones as primitive types.
 
@@ -39,7 +39,7 @@ Also, prefer the usage of Blade components when you use nesting, they will be ab
 
 ---
 ### 🗺️ Use Route Model Binding to fetch the model
-Pass only an ID or UUID to the `mount` method, then map the model attributes to component properties. Remember: don't assign a whole model, but its attributes only. To avoid manually mapping model attributes, you can use `fill` method, or [Loop Functions](https://github.com/michael-rubel/laravel-loop-functions#assign-eloquent-model-attributes-to-class-properties) package.
+Pass only an ID or UUID to the `mount` method, then map the model attributes to component properties. Remember: don't assign a whole model, but its attributes only. To avoid manually mapping model attributes, you can use the `fill` method.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/route-model-binding.md)
 
@@ -61,7 +61,7 @@ Instead of constantly [polling](https://livewire.laravel.com/docs/polling) the p
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/event-listeners-over-polling.md)
 
 ---
-### 📦 Use computed properties to access database
+### 📦 Use computed properties to access the database
 You can use [computed properties](https://livewire.laravel.com/docs/computed-properties) to avoid unnecessary database queries. Computed properties are cached within the component's lifecycle and do not perform additional SQL queries on multiple calls in the component class or in the blade view.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/computed-properties.md)
@@ -80,13 +80,13 @@ You can use [loading states](https://livewire.laravel.com/docs/loading#basic-usa
 
 ---
 ### 📈 Use lazy loading
-Instead of blocking the page render until your data is ready, you can create a placeholder using the [lazy loading](https://livewire.laravel.com/docs/lazy) technique so your UI will feel more responsive.
+Instead of blocking the page render until your data is ready, you can create a placeholder using the [lazy loading](https://livewire.laravel.com/docs/lazy) technique to make your UI more responsive.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/lazy-loading.md)
 
 ---
 ### 🔗 Entangle
-You can sync your data with the backend using [@entangle](https://livewire.laravel.com/docs/upgrading#entangle) directive. This way the model will be updated instantly on the frontend, and the data would persist server-side after the network request reach the server. It dramatically improves the user experience on slow devices.
+Sync your data with the backend using [@entangle](https://livewire.laravel.com/docs/upgrading#entangle) directive. This way the model will be updated instantly on the frontend, and the data will persist server-side after the network request reaches the server. It dramatically improves the user experience on slow devices.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/entangle.md)
 
@@ -99,11 +99,11 @@ This way you can reuse the same validation rules in different application layers
 
 ---
 ### 🧪 Always write feature tests
-Even simple tests can help you a lot when you change something in the component.
-Livewire has a very simple yet powerful [testing API](https://livewire.laravel.com/docs/testing).
+Even simple tests can greatly help when you change something in the component.
+Livewire has a straightforward yet powerful [testing API](https://livewire.laravel.com/docs/testing).
 
 ---
-> 🔨 Are you working with Livewire on a daily basis? PRs are welcome.\
+> 🔨 Are you working with Livewire daily?\
 > Suggest your best practices if you don't see them on the list.\
 > If you aren't sure if it's a good practice, you can [start a discussion](https://github.com/michael-rubel/livewire-best-practices/discussions/new).
 
