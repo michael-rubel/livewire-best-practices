@@ -92,7 +92,7 @@ Instead of blocking the page render until your data is ready, you can create a p
 
 ---
 ### 🔗 Entangle
-Sync your data with the backend using [@entangle](https://livewire.laravel.com/docs/upgrading#entangle) directive. This way the model will be updated instantly on the frontend, and the data will persist server-side after the network request reaches the server. It dramatically improves the user experience on slow devices.
+Sync your data with the backend using [$wire.entangle](https://livewire.laravel.com/docs/alpine#sharing-state-using-wireentangle) directive. This way the model will be updated instantly on the frontend, and the data will persist server-side after the network request reaches the server. It dramatically improves the user experience on slow devices.
 
 [Example](https://github.com/michael-rubel/livewire-best-practices/blob/main/Examples/entangle.md)
 
