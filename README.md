@@ -1,4 +1,4 @@
-![Livewire Best Practices](https://avatars.githubusercontent.com/u/51960834?s=100&v=4)
+<p align="left"><img width="300" src="https://raw.githubusercontent.com/livewire/livewire/main/art/readme_logo.png" alt="Livewire Logo"></p>
 
 ## Livewire Best Practices
 [![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
